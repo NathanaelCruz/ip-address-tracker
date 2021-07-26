@@ -46,6 +46,15 @@ const GlobalStyles = createGlobalStyle`
     }
   }
 
+  .leaflet-control-attribution.leaflet-control {
+      background-color: #1b2071;
+      color: ${props => props.theme.colors.white};
+
+      a{
+        color: #9db0fe;
+      }
+  }
+
   #root{
     width: 100%;
     height: 100vh;

@@ -32,7 +32,7 @@ const Map: React.FC = () => {
         zoom={13}
       />
       <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        attribution='&copy; <a href="http://osm.org/copyright" id="copy-leaflet">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker
