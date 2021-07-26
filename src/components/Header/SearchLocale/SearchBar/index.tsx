@@ -64,7 +64,11 @@ const SearchBar: React.FC = () => {
         .then(resp => resp.json())
         .then(data => {
           if(data.code){
-            alert(data.code.message)
+            if(data.code.message === undefined) {
+              alert('Invalid IP, please try a valid one.')
+            } else {
+              alert(data.code.message)
+            }
             return null
           }
           setAndFormatedLocalization(data)
