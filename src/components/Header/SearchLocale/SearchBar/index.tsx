@@ -12,25 +12,25 @@ const SearchBar: React.FC = () => {
   const [ipAddress, setIpAddress] = useState<string>('')
   const localeDispatch = useDispatch()
 
-  const maskIPAddress = (value: string) => {
-    return value.replace(/\D/g, '')
-                .replace(/(\d{1})(\d)/, '$1.$2')
-                .replace(/(\d{1})(\d)/, '$1.$2')
-                .replace(/(\d{1})(\d)/, '$1.$2')
-                .replace(/(\d).(\d).(\d).(\d)(\d)/, '$1$2.$3.$4.$5')
-                .replace(/(\d{2}).(\d).(\d).(\d)(\d)/, '$1$2.$3.$4.$5')
-                .replace(/(\d{3}).(\d).(\d).(\d)(\d)/, '$1.$2$3.$4.$5')
-                .replace(/(\d{3}).(\d{2}).(\d).(\d)(\d)/, '$1.$2$3.$4.$5')
-                .replace(/(\d{3}).(\d{3}).(\d).(\d)(\d)/, '$1.$2.$3$4.$5')
-                .replace(/(\d{3}).(\d{3}).(\d{2}).(\d)(\d)/, '$1.$2.$3$4.$5')
-                .replace(/(\d{3}).(\d{3}).(\d{3}).(\d)(\d)/, '$1.$2.$3.$4$5')
-                .replace(/(\d{3}).(\d{3}).(\d{3}).(\d{2})(\d)/, '$1.$2.$3.$4$5')
-                .replace(/(\d{3}).(\d{3}).(\d{3}).(\d{3})(\d)/, '$1.$2.$3.$4')
-  }
+  // const maskIPAddress = (value: string) => {
+  //   return value.replace(/\D/g, '')
+  //               .replace(/(\d{1})(\d)/, '$1.$2')
+  //               .replace(/(\d{1})(\d)/, '$1.$2')
+  //               .replace(/(\d{1})(\d)/, '$1.$2')
+  //               .replace(/(\d).(\d).(\d).(\d)(\d)/, '$1$2.$3.$4.$5')
+  //               .replace(/(\d{2}).(\d).(\d).(\d)(\d)/, '$1$2.$3.$4.$5')
+  //               .replace(/(\d{3}).(\d).(\d).(\d)(\d)/, '$1.$2$3.$4.$5')
+  //               .replace(/(\d{3}).(\d{2}).(\d).(\d)(\d)/, '$1.$2$3.$4.$5')
+  //               .replace(/(\d{3}).(\d{3}).(\d).(\d)(\d)/, '$1.$2.$3$4.$5')
+  //               .replace(/(\d{3}).(\d{3}).(\d{2}).(\d)(\d)/, '$1.$2.$3$4.$5')
+  //               .replace(/(\d{3}).(\d{3}).(\d{3}).(\d)(\d)/, '$1.$2.$3.$4$5')
+  //               .replace(/(\d{3}).(\d{3}).(\d{3}).(\d{2})(\d)/, '$1.$2.$3.$4$5')
+  //               .replace(/(\d{3}).(\d{3}).(\d{3}).(\d{3})(\d)/, '$1.$2.$3.$4')
+  // }
 
   const handleIPAddress = useDebouncedCallback(
     (e) => {
-      let valueInput: string = maskIPAddress(e.target.value)
+      let valueInput: string = e.target.value
       e.target.value = valueInput
 
       setIpAddress(valueInput)
