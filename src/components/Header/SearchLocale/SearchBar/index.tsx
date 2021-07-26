@@ -88,7 +88,7 @@ const SearchBar: React.FC = () => {
 
   return (
     <Styles.SearchBar>
-      <Styles.SearchInput type="text" placeholder="Search for any IP address or domain" onInput={(e) => handleIPAddress(e)} maxLength={15} />
+      <Styles.SearchInput type="text" placeholder="Search for any IP address or domain" onChange={(e) => handleIPAddress(e)} maxLength={15} />
       <Styles.SearchButton aria-label="Botão para pesquisa" onClick={() => searchLocalization()}>
         <img src={Arrow} alt="Seta para pesquisar" />
       </Styles.SearchButton>
