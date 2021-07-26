@@ -25,6 +25,8 @@ export const SearchButton = styled.button`
   width: 6rem;
   ${SearchBarItems()}
   background-color: ${props => props.theme.colors.black};
+  cursor: pointer;
+  
   ${SmoothTransition({
     duration: '.3s',
     animation: 'ease-in-out'
